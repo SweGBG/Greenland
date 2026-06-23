@@ -160,6 +160,21 @@ export default function AuthForm({
           {mode === "login" ? a.loginCta : a.signupCta}
         </button>
 
+        {mode === "login" && (
+          <button
+            type="button"
+            onClick={() => {
+              setName("");
+              setEmail("demo@greenland.se");
+              setPassword("demo123");
+              setError(null);
+            }}
+            className="text-center text-[12px] font-medium text-moss-600/70 underline-offset-2 transition-colors hover:text-moss-600 hover:underline"
+          >
+            {a.demoTry} →
+          </button>
+        )}
+
         <p className="text-center text-[12.5px] text-soil-600/70">
           {mode === "login" ? a.noAccount : a.haveAccount}{" "}
           <button

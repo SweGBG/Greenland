@@ -123,6 +123,7 @@ export interface Translations {
     errName: string;
     errExists: string;
     errInvalid: string;
+    demoTry: string;
   };
   cart: {
     title: string;
@@ -166,6 +167,12 @@ export interface Translations {
     loginRequiredSub: string;
     loginRequiredCta: string;
     backToShop: string;
+  };
+  demo: {
+    reset: string;
+    confirm: string;
+    yes: string;
+    cancel: string;
   };
 }
 
@@ -300,6 +307,7 @@ export const translations: Record<Lang, Translations> = {
       errName: "Ange ditt namn.",
       errExists: "Det finns redan ett konto med den e-posten.",
       errInvalid: "Fel e-post eller lösenord.",
+      demoTry: "Fyll i demokonto",
     },
     cart: {
       title: "Din varukorg",
@@ -343,6 +351,12 @@ export const translations: Record<Lang, Translations> = {
       loginRequiredSub: "Här samlas dina ordrar, din profil och din historik.",
       loginRequiredCta: "Logga in",
       backToShop: "Tillbaka till gården",
+    },
+    demo: {
+      reset: "Återställ demo",
+      confirm: "Nollställ allt?",
+      yes: "Ja, nollställ",
+      cancel: "Avbryt",
     },
   },
   en: {
@@ -475,6 +489,7 @@ export const translations: Record<Lang, Translations> = {
       errName: "Please enter your name.",
       errExists: "An account with that email already exists.",
       errInvalid: "Wrong email or password.",
+      demoTry: "Fill in demo account",
     },
     cart: {
       title: "Your cart",
@@ -518,6 +533,12 @@ export const translations: Record<Lang, Translations> = {
       loginRequiredSub: "This is where your orders, profile and history live.",
       loginRequiredCta: "Log in",
       backToShop: "Back to the farm",
+    },
+    demo: {
+      reset: "Reset demo",
+      confirm: "Clear everything?",
+      yes: "Yes, clear it",
+      cancel: "Cancel",
     },
   },
 };

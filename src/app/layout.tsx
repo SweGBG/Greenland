@@ -3,6 +3,7 @@ import { Fraunces, Work_Sans, JetBrains_Mono } from "next/font/google";
 import { LangProvider } from "@/context/LangContext";
 import { CartProvider } from "@/context/CartContext";
 import { AuthProvider } from "@/context/AuthContext";
+import DemoReset from "@/components/DemoReset";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -54,7 +55,10 @@ export default function RootLayout({
       >
         <LangProvider>
           <AuthProvider>
-            <CartProvider>{children}</CartProvider>
+            <CartProvider>
+              {children}
+              <DemoReset />
+            </CartProvider>
           </AuthProvider>
         </LangProvider>
       </body>
