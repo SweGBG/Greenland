@@ -1,29 +1,13 @@
 import type { Metadata } from "next";
-import { Fraunces, Work_Sans, JetBrains_Mono } from "next/font/google";
 import { LangProvider } from "@/context/LangContext";
+
+// Lokala fonter via @fontsource — ingen build-tid-fetch till Google.
+// Variable fonts: en fil per familj täcker alla vikter.
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/work-sans";
+import "@fontsource-variable/jetbrains-mono";
+
 import "./globals.css";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const workSans = Work_Sans({
-  subsets: ["latin"],
-  variable: "--font-worksans",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const jbMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jbmono",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Green Land — Ekologisk gård & gårdsbutik",
@@ -45,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sv" className={`${fraunces.variable} ${workSans.variable} ${jbMono.variable}`}>
+    <html lang="sv">
       <body
         className="font-body antialiased"
         style={{ "--nav-h": "76px" } as React.CSSProperties}
