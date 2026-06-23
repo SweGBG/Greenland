@@ -6,14 +6,16 @@ import { Menu, Leaf } from "lucide-react";
 import { useLang } from "@/context/LangContext";
 import LangSwitch from "./LangSwitch";
 import MobileMenu from "./MobileMenu";
+import CartButton from "./CartButton";
+import AccountMenu from "./AccountMenu";
 
 const navKeys = [
-  { key: "about", href: "#gard" },
-  { key: "menu", href: "#sortiment" },
-  { key: "packages", href: "#lador" },
-  { key: "how", href: "#sa-funkar-det" },
-  { key: "reviews", href: "#omdomen" },
-  { key: "contact", href: "#kontakt" },
+  { key: "about", href: "/#gard" },
+  { key: "menu", href: "/#sortiment" },
+  { key: "packages", href: "/#lador" },
+  { key: "how", href: "/#sa-funkar-det" },
+  { key: "reviews", href: "/#omdomen" },
+  { key: "contact", href: "/#kontakt" },
 ] as const;
 
 export default function Header() {
@@ -42,7 +44,7 @@ export default function Header() {
       style={{ height: "var(--nav-h, 76px)" }}
     >
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link href="#hero" className="flex items-center gap-2.5 group">
+        <Link href="/" className="flex items-center gap-2.5 group">
           <span
             className={`flex h-9 w-9 items-center justify-center rounded-full transition-colors ${
               scrolled ? "bg-moss-600" : "bg-cream-50/15 backdrop-blur-sm"
@@ -64,7 +66,7 @@ export default function Header() {
 
         <nav className="hidden items-center gap-7 lg:flex">
           {navKeys.map((item) => (
-            <a
+            <Link
               key={item.key}
               href={item.href}
               className={`text-[13px] font-medium tracking-wide transition-colors ${
@@ -74,29 +76,34 @@ export default function Header() {
               }`}
             >
               {t.nav[item.key]}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-2.5 lg:flex">
           <LangSwitch dark={!scrolled} />
-          <a
-            href="#lador"
+          <CartButton dark={!scrolled} />
+          <AccountMenu dark={!scrolled} />
+          <Link
+            href="/#lador"
             className="rounded-full bg-barn-500 px-5 py-2.5 text-[13px] font-semibold text-cream-50 shadow-tag transition-transform hover:-translate-y-0.5 hover:bg-barn-400"
           >
             {t.nav.cta}
-          </a>
+          </Link>
         </div>
 
-        <button
-          onClick={() => setOpen(true)}
-          aria-label="Öppna meny"
-          className={`flex h-10 w-10 items-center justify-center rounded-full lg:hidden ${
-            scrolled ? "text-moss-700" : "text-cream-50"
-          }`}
-        >
-          <Menu className="h-6 w-6" />
-        </button>
+        <div className="flex items-center gap-1.5 lg:hidden">
+          <CartButton dark={!scrolled} />
+          <button
+            onClick={() => setOpen(true)}
+            aria-label="Öppna meny"
+            className={`flex h-10 w-10 items-center justify-center rounded-full ${
+              scrolled ? "text-moss-700" : "text-cream-50"
+            }`}
+          >
+            <Menu className="h-6 w-6" />
+          </button>
+        </div>
       </div>
 
       <MobileMenu open={open} onClose={() => setOpen(false)} navKeys={navKeys} />

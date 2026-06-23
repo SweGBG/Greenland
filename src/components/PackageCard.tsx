@@ -1,12 +1,26 @@
 "use client";
 
 import { Check } from "lucide-react";
+import { useRouter } from "next/navigation";
 import type { FarmPackage } from "@/lib/packagesData";
 import { useLang } from "@/context/LangContext";
+import { useCart } from "@/context/CartContext";
 import clsx from "clsx";
 
 export default function PackageCard({ pkg }: { pkg: FarmPackage }) {
   const { lang, t } = useLang();
+  const { addItem } = useCart();
+  const router = useRouter();
+
+  function choose() {
+    addItem({
+      id: pkg.id,
+      kind: "package",
+      name: pkg.name,
+      price: pkg.price,
+    });
+    router.push("/varukorg");
+  }
 
   return (
     <div
@@ -84,8 +98,8 @@ export default function PackageCard({ pkg }: { pkg: FarmPackage }) {
         ))}
       </ul>
 
-      <a
-        href="#kontakt"
+      <button
+        onClick={choose}
         className={clsx(
           "mt-8 flex min-h-[48px] items-center justify-center rounded-full text-sm font-semibold transition-colors",
           pkg.popular
@@ -94,7 +108,7 @@ export default function PackageCard({ pkg }: { pkg: FarmPackage }) {
         )}
       >
         {t.packages.cta}
-      </a>
+      </button>
     </div>
   );
 }

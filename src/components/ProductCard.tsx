@@ -1,8 +1,10 @@
 "use client";
 
-import { Egg, Beef, Carrot, Wheat, Drumstick, Ham, Leaf, Milk, Plus } from "lucide-react";
+import { useState } from "react";
+import { Egg, Beef, Carrot, Wheat, Drumstick, Ham, Leaf, Milk, Plus, Check } from "lucide-react";
 import type { Product } from "@/lib/menuData";
 import { useLang } from "@/context/LangContext";
+import { useCart } from "@/context/CartContext";
 
 const icons = { egg: Egg, beef: Beef, carrot: Carrot, wheat: Wheat, drumstick: Drumstick, ham: Ham, leaf: Leaf, milk: Milk };
 
@@ -10,7 +12,21 @@ const unitLabelKey = { kg: "perKg", dozen: "perDozen", unit: "perUnit" } as cons
 
 export default function ProductCard({ product }: { product: Product }) {
   const { lang, t } = useLang();
+  const { addItem } = useCart();
   const Icon = icons[product.icon];
+  const [added, setAdded] = useState(false);
+
+  function handleAdd() {
+    addItem({
+      id: product.id,
+      kind: "product",
+      name: product.name,
+      price: product.price,
+      unit: product.unit,
+    });
+    setAdded(true);
+    window.setTimeout(() => setAdded(false), 1100);
+  }
 
   return (
     <div className="group relative flex flex-col rounded-2xl border border-moss-600/12 bg-cream-50 p-5 transition-all hover:-translate-y-1 hover:border-wheat-300 hover:shadow-crate">
@@ -40,10 +56,13 @@ export default function ProductCard({ product }: { product: Product }) {
           </span>
         </p>
         <button
+          onClick={handleAdd}
           aria-label={t.menu.addToOrder}
-          className="flex h-9 w-9 items-center justify-center rounded-full bg-moss-600 text-cream-50 transition-colors group-hover:bg-barn-500"
+          className={`flex h-9 w-9 items-center justify-center rounded-full text-cream-50 transition-colors ${
+            added ? "bg-wheat-500" : "bg-moss-600 group-hover:bg-barn-500"
+          }`}
         >
-          <Plus className="h-4 w-4" />
+          {added ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
         </button>
       </div>
     </div>

@@ -94,6 +94,79 @@ export interface Translations {
     rights: string;
     made: string;
   };
+  account: {
+    account: string;
+    login: string;
+    signup: string;
+    logout: string;
+    myAccount: string;
+    orderHistory: string;
+    greeting: string;
+    loginTitle: string;
+    loginSub: string;
+    signupTitle: string;
+    signupSub: string;
+    name: string;
+    email: string;
+    password: string;
+    namePh: string;
+    emailPh: string;
+    passwordPh: string;
+    loginCta: string;
+    signupCta: string;
+    noAccount: string;
+    haveAccount: string;
+    switchToSignup: string;
+    switchToLogin: string;
+    errEmail: string;
+    errPassword: string;
+    errName: string;
+    errExists: string;
+    errInvalid: string;
+  };
+  cart: {
+    title: string;
+    badge: string;
+    empty: string;
+    emptySub: string;
+    emptyCta: string;
+    qty: string;
+    remove: string;
+    perKg: string;
+    perDozen: string;
+    perUnit: string;
+    summary: string;
+    subtotal: string;
+    delivery: string;
+    deliveryFree: string;
+    total: string;
+    checkout: string;
+    continue: string;
+    added: string;
+    loginToCheckout: string;
+    pkgLabel: string;
+  };
+  member: {
+    title: string;
+    welcome: string;
+    profileTitle: string;
+    memberSince: string;
+    ordersTitle: string;
+    noOrders: string;
+    noOrdersCta: string;
+    order: string;
+    placed: string;
+    status: string;
+    statusProcessing: string;
+    statusPacked: string;
+    statusDelivered: string;
+    items: string;
+    orderTotal: string;
+    loginRequired: string;
+    loginRequiredSub: string;
+    loginRequiredCta: string;
+    backToShop: string;
+  };
 }
 
 export const translations: Record<Lang, Translations> = {
@@ -198,6 +271,79 @@ export const translations: Record<Lang, Translations> = {
       rights: "Alla rättigheter förbehållna.",
       made: "Byggd av",
     },
+    account: {
+      account: "Konto",
+      login: "Logga in",
+      signup: "Skapa konto",
+      logout: "Logga ut",
+      myAccount: "Mitt konto",
+      orderHistory: "Orderhistorik",
+      greeting: "Hej",
+      loginTitle: "Välkommen tillbaka",
+      loginSub: "Logga in för att se dina ordrar och favoriter.",
+      signupTitle: "Bli medlem",
+      signupSub: "Skapa ett konto så minns vi din låda till nästa vecka.",
+      name: "Namn",
+      email: "E-post",
+      password: "Lösenord",
+      namePh: "Anna Andersson",
+      emailPh: "du@exempel.se",
+      passwordPh: "Minst 6 tecken",
+      loginCta: "Logga in",
+      signupCta: "Skapa konto",
+      noAccount: "Inget konto än?",
+      haveAccount: "Har du redan ett konto?",
+      switchToSignup: "Skapa ett",
+      switchToLogin: "Logga in",
+      errEmail: "Ange en giltig e-postadress.",
+      errPassword: "Lösenordet måste vara minst 6 tecken.",
+      errName: "Ange ditt namn.",
+      errExists: "Det finns redan ett konto med den e-posten.",
+      errInvalid: "Fel e-post eller lösenord.",
+    },
+    cart: {
+      title: "Din varukorg",
+      badge: "Varukorg",
+      empty: "Varukorgen är tom",
+      emptySub: "Lägg till något från sortimentet eller välj en färdig låda.",
+      emptyCta: "Till sortimentet",
+      qty: "Antal",
+      remove: "Ta bort",
+      perKg: "/kg",
+      perDozen: "/dussin",
+      perUnit: "/st",
+      summary: "Sammanfattning",
+      subtotal: "Delsumma",
+      delivery: "Leverans",
+      deliveryFree: "Ingår",
+      total: "Att betala",
+      checkout: "Slutför beställning",
+      continue: "Fortsätt handla",
+      added: "Tillagd i varukorgen",
+      loginToCheckout: "Logga in för att slutföra",
+      pkgLabel: "Låda",
+    },
+    member: {
+      title: "Mitt konto",
+      welcome: "Välkommen",
+      profileTitle: "Profil",
+      memberSince: "Medlem sedan",
+      ordersTitle: "Orderhistorik",
+      noOrders: "Du har inga ordrar än.",
+      noOrdersCta: "Handla från gården",
+      order: "Order",
+      placed: "Lagd",
+      status: "Status",
+      statusProcessing: "Behandlas",
+      statusPacked: "Packad",
+      statusDelivered: "Levererad",
+      items: "Varor",
+      orderTotal: "Summa",
+      loginRequired: "Logga in för att se ditt konto",
+      loginRequiredSub: "Här samlas dina ordrar, din profil och din historik.",
+      loginRequiredCta: "Logga in",
+      backToShop: "Tillbaka till gården",
+    },
   },
   en: {
     nav: {
@@ -299,6 +445,79 @@ export const translations: Record<Lang, Translations> = {
       contact: "Contact",
       rights: "All rights reserved.",
       made: "Built by",
+    },
+    account: {
+      account: "Account",
+      login: "Log in",
+      signup: "Sign up",
+      logout: "Log out",
+      myAccount: "My account",
+      orderHistory: "Order history",
+      greeting: "Hi",
+      loginTitle: "Welcome back",
+      loginSub: "Log in to see your orders and favourites.",
+      signupTitle: "Become a member",
+      signupSub: "Create an account and we'll remember your box for next week.",
+      name: "Name",
+      email: "Email",
+      password: "Password",
+      namePh: "Anna Andersson",
+      emailPh: "you@example.com",
+      passwordPh: "At least 6 characters",
+      loginCta: "Log in",
+      signupCta: "Create account",
+      noAccount: "No account yet?",
+      haveAccount: "Already have an account?",
+      switchToSignup: "Create one",
+      switchToLogin: "Log in",
+      errEmail: "Enter a valid email address.",
+      errPassword: "Password must be at least 6 characters.",
+      errName: "Please enter your name.",
+      errExists: "An account with that email already exists.",
+      errInvalid: "Wrong email or password.",
+    },
+    cart: {
+      title: "Your cart",
+      badge: "Cart",
+      empty: "Your cart is empty",
+      emptySub: "Add something from the produce list or pick a ready-made box.",
+      emptyCta: "Browse the produce",
+      qty: "Qty",
+      remove: "Remove",
+      perKg: "/kg",
+      perDozen: "/dozen",
+      perUnit: "/each",
+      summary: "Summary",
+      subtotal: "Subtotal",
+      delivery: "Delivery",
+      deliveryFree: "Included",
+      total: "Total",
+      checkout: "Place order",
+      continue: "Continue shopping",
+      added: "Added to cart",
+      loginToCheckout: "Log in to check out",
+      pkgLabel: "Box",
+    },
+    member: {
+      title: "My account",
+      welcome: "Welcome",
+      profileTitle: "Profile",
+      memberSince: "Member since",
+      ordersTitle: "Order history",
+      noOrders: "You don't have any orders yet.",
+      noOrdersCta: "Shop from the farm",
+      order: "Order",
+      placed: "Placed",
+      status: "Status",
+      statusProcessing: "Processing",
+      statusPacked: "Packed",
+      statusDelivered: "Delivered",
+      items: "Items",
+      orderTotal: "Total",
+      loginRequired: "Log in to see your account",
+      loginRequiredSub: "This is where your orders, profile and history live.",
+      loginRequiredCta: "Log in",
+      backToShop: "Back to the farm",
     },
   },
 };

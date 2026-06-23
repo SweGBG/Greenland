@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Leaf, Instagram, Facebook } from "lucide-react";
 import { useLang } from "@/context/LangContext";
 
@@ -8,10 +9,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   const links = [
-    { key: "about", href: "#gard" },
-    { key: "menu", href: "#sortiment" },
-    { key: "packages", href: "#lador" },
-    { key: "contact", href: "#kontakt" },
+    { key: "about", href: "/#gard" },
+    { key: "menu", href: "/#sortiment" },
+    { key: "packages", href: "/#lador" },
+    { key: "contact", href: "/#kontakt" },
   ] as const;
 
   return (
@@ -53,9 +54,9 @@ export default function Footer() {
             <ul className="mt-4 flex flex-col gap-2.5 text-[14px]">
               {links.map((l) => (
                 <li key={l.key}>
-                  <a href={l.href} className="transition-colors hover:text-wheat-300">
+                  <Link href={l.href} className="transition-colors hover:text-wheat-300">
                     {t.nav[l.key]}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
