@@ -18,7 +18,7 @@ export default function About() {
     <section id="gard" className="grain-overlay relative bg-cream-50 py-20 sm:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:items-center lg:gap-16">
         <Reveal className="relative">
-          <div className="relative overflow-hidden rounded-[1.4rem] shadow-crate">
+          <div data-parallax="0.06" className="relative overflow-hidden rounded-[1.4rem] shadow-crate">
             <Image
               src="/images/green-land-farm.jpg"
               alt="Illustration av Green Lands odlingar, lada och gårdsbutik i kvällsljus"

@@ -18,6 +18,7 @@ export interface Translations {
     ctaPrimary: string;
     ctaSecondary: string;
     scroll: string;
+    chips: string[];
   };
   ticker: string[];
   about: {
@@ -195,6 +196,7 @@ export const translations: Record<Lang, Translations> = {
       ctaPrimary: "Se sortimentet",
       ctaSecondary: "Boka gårdsbesök",
       scroll: "Skrolla",
+      chips: ["Skördat samma vecka", "Hämta på gården", "KRAV-odlat"],
     },
     ticker: [
       "EKOLOGISKT CERTIFIERAT",
@@ -377,6 +379,7 @@ export const translations: Record<Lang, Translations> = {
       ctaPrimary: "See the produce",
       ctaSecondary: "Book a farm visit",
       scroll: "Scroll",
+      chips: ["Harvested this week", "Farm pickup", "Certified organic"],
     },
     ticker: [
       "CERTIFIED ORGANIC",

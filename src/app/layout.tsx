@@ -4,6 +4,7 @@ import { LangProvider } from "@/context/LangContext";
 import { CartProvider } from "@/context/CartContext";
 import { AuthProvider } from "@/context/AuthContext";
 import DemoReset from "@/components/DemoReset";
+import SiteEffects from "@/components/SiteEffects";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -29,6 +30,7 @@ const jbMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://greenland.vercel.app"),
   title: "Green Land — Ekologisk gård & gårdsbutik",
   description:
     "Grönsaker, ägg och kött från Green Land. Ekologiskt odlat, fodrat och skördat på gården utanför Göteborg — utan mellanhänder.",
@@ -58,6 +60,7 @@ export default function RootLayout({
             <CartProvider>
               {children}
               <DemoReset />
+              <SiteEffects />
             </CartProvider>
           </AuthProvider>
         </LangProvider>

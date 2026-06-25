@@ -85,8 +85,9 @@ export default function Header() {
           <CartButton dark={!scrolled} />
           <AccountMenu dark={!scrolled} />
           <Link
+            data-magnetic="0.25"
             href="/#lador"
-            className="rounded-full bg-barn-500 px-5 py-2.5 text-[13px] font-semibold text-cream-50 shadow-tag transition-transform hover:-translate-y-0.5 hover:bg-barn-400"
+            className="rounded-full bg-barn-500 px-5 py-2.5 text-[13px] font-semibold text-cream-50 shadow-tag transition-colors hover:bg-barn-400"
           >
             {t.nav.cta}
           </Link>
